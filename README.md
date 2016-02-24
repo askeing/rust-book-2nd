@@ -1,19 +1,18 @@
-# The Rust Programming Language
+# Rust 程式語言
 
-This is the next iteration of “The Rust Programming Language”, which is
-currently located [in the main Rust repository][src]. If you want to read the
-book, you should check it out there or [on the web][prod].
+這是 "Rust 程式語言" 的下一版，當前版本的書放在 [Rust repository 中][src]。
+如果你想要閱讀那一本書，你應該從那邊或[此網頁][prod]去一探究竟。
 
 [src]: https://github.com/rust-lang/rust/tree/master/src/doc/book
 [prod]: https://doc.rust-lang.org/book/
 
-If you would like to see this version rendered, it’s [on GitHub pages][html].
+如果你想瀏覽這一版本，它放在 [Github pages][html] 上。
 
 [html]: http://rust-lang.github.io/book/
 
-## Requirements
+## 需求
 
-Building the book requires [mdBook]. To get it:
+建置這本書需要 [mdBook]。透過以下指令可以安裝：
 
 [mdBook]: https://github.com/azerupi/mdBook
 
@@ -21,26 +20,28 @@ Building the book requires [mdBook]. To get it:
 $ cargo install mdbook
 ```
 
-## Building
+## 建置
 
-To build the book, type:
+建置書籍，輸入：
 
 ```bash
 $ mdbook build
 ```
 
-The output will be in the `book` subdirectory. To check it out, open it in
-your web browser:
+輸出的結果將會被放在 `book` 的子目錄下。
+如果想瀏覽結果，只需要在你的瀏覽器打開就可以了：
 
 ```bash
 $ firefox book/index.html
 ```
 
-To run the tests:
+執行測試：
 
 ```bash
 $ mdbook test
 ```
+
+> 譯註：以下維持原文，不做翻譯。
 
 ## Contributing
 
