@@ -1,7 +1,7 @@
-# The Rust Programming Language
+# Rust 程式語言
 
-- [Introduction](introduction.md)
-    - [Installation](installation.md)
+- [簡介](introduction.md)
+    - [安裝](installation.md)
     - [Hello, World!](hello-world.md)
     - [The Design of Rust](design.md)
 

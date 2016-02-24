@@ -1,31 +1,24 @@
-# Introduction
+# 簡介
 
-Welcome to “The Rust Programming Language”, an introductory book about Rust.
-Rust is a programming language that’s focused on safety, concurrency, and
-speed. It maintains these goals without having a garbage collector, making it a
-useful language for a number of use cases other languages aren’t good at:
-embedding in other languages, programs with specific space and time
-requirements, and writing low-level code, like device drivers and operating
-systems. It improves on current languages targeting this space by having a
-number of compile-time safety checks that produce no runtime overhead, while
-eliminating all data races. Rust also aims to achieve ‘zero-cost abstractions’
-even though some of these abstractions feel like those of a high-level
-language. Even then, Rust still allows precise control like a low-level
-language would.
 
-This book is written for a reader who already knows how to program in at least
-one programming language. Which language that is does not matter very much,
-though you may have an easier time if you’ve programmed in a low-level language
-with manual memory allocation.
+歡迎來到 "Rust 程式語言"，這是一本 Rust 的入門介紹書籍。
+Rust 是專注在安全、並行 (concurrency)、及速度的程式語言。
+他不需要垃圾回收器去達成目標，這讓他在某些其他語言並不擅長的情形下非常有用：
+嵌入其他語言、在特定空間及時間需求下撰寫程式、撰寫低階程式碼，例如驅動程式和作業系統。
+他改善現有語言，透過若干編譯期的安全檢查，去除所有的資料競爭 (data races)，讓執行時沒有多餘負擔。
+Rust 同時也旨在實現 "無成本抽象化" (zero-cost abstractions)，雖然有些抽象化感覺起來就像高階語言。
+即使如此，Rust 仍允許像低階語言一樣的精確控制。
 
-After reading this book, you should be comfortable writing Rust programs. We’ll
-be learning Rust through small, focused examples that demonstrate each topic.
-The chapters build upon each other, so if you skip ahead, you may have to skip
-back to refer to a previous concept.
+本書是寫給已經至少知道如何撰寫一種程式語言的讀者。
+哪種語言並不是很重要，當然，如果你會寫手動配置記憶體的低階語言，你會覺得更簡單一些。
 
-## Contributing to the book
+讀完這本書之後，你應該可以自在地撰寫 Rust 程式。
+我們將從各章節內小而集中的範例一步一步學習 Rust。
+各章節是依序建立的，所以如果你跳過任何一章，你可能會需要回頭參考前面的概念。
 
-This book is open source. If you find an error, please don’t hesitate to file an
-issue or send a pull request [on GitHub].
+## 貢獻本書
 
-[on GitHub]: https://github.com/rust-lang/book
+這本書是開源的。
+如果你發現錯誤，請不吝於開啟 issue 或發送 pull request 到 [Github] 上。
+
+[GitHub]: https://github.com/rust-lang/book
