@@ -1,11 +1,8 @@
-# Up and Running
+# 開始啟航
 
-We’ll start our journey with Rust by talking about the absolute basics —
-concepts that appear in almost every programming language. Many programming
-languages have lots in common at their core. None of the concepts presented are
-unique to Rust, but we’ll cover Rust’s particular syntax and conventions around
-these common concepts.
+接著我們即將從最基礎的部分開始我們的旅程－在幾乎所有程式語言都會出現的概念。
+不少程式語言的核心有著許多共通之處。
+Rust 並沒有什麼獨一無二的概念，但我們將圍繞著這些共通概念去介紹 Rust 的特定語法及慣例。
 
-If you want to skip this section, you can, but you may end up coming back later
-to find out small details. These foundations will be in every single useful
-Rust program, and learning them gives us a strong core to start from.
+如果你想要跳過本節，沒有問題，但你未來可能會為了某些細節而回來。
+這些基礎將會在所有有用的 Rust 程式中都會出現，而且學習這些也給我們更紮實的基礎。

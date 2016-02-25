@@ -3,11 +3,11 @@
 - [簡介](introduction.md)
     - [安裝](installation.md)
     - [Hello, World!](hello-world.md)
-    - [The Design of Rust](design.md)
+    - [Rust 的設計](design.md)
 
 - [Tutorial]()
 
-- [Up and Running](up-and-running.md)
+- [開始啟航](up-and-running.md)
     - [Variable Bindings](variable-bindings.md)
     - [Functions](functions.md)
     - [Scalar Types](scalar-types.md)

@@ -1,25 +1,20 @@
 # Hello, world!
 
-Now that you have Rust installed, let’s write your first Rust program. It's
-traditional when learning a new language to write a little program to print the
-text “Hello, world!” to the screen, and in this section, we'll follow that
-tradition.
+現在 Rust 已經安裝好了，讓我們開始寫第一個 Rust 程式。
+傳統上，學習一個新的語言時，我們都會撰寫一個小程式去印出 "Hello, world!" 在螢幕上。
+本節我們會遵循這個傳統。
 
-The nice thing about starting with such a simple program is that you can
-quickly verify that your compiler is installed, and that it's working properly.
-Printing information to the screen is also just a pretty common thing to do, so
-practicing it early on is good.
+從簡單的小程式開始的好處，是你能快速的驗證你的編譯器已經安裝完成，而且運作良好。
+把資訊印在螢幕上也是個很常見的事情，所以早點練習沒什麼不好。
 
-> Note: This book assumes basic familiarity with the command line. Rust itself
-> makes no specific demands about your editing, tooling, or where your code
-> lives, so if you prefer an IDE to the command line, that's an option.
+> 註：本書假設你已經有基本的指令熟悉程度。
+> Rust 不指定編輯器、工具、等等，所以如果你喜歡使用 IDE，這也是個選擇。
 
-## Creating a Project File
+## 建立專案檔
 
-First, make a file to put your Rust code in. Rust doesn't care where your code
-lives, but for this book, I suggest making a *projects* directory in your home
-directory, and keeping all your projects there. Open a terminal and enter the
-following commands to make a directory for this particular project:
+首先，建立一個檔案來放你的程式碼。
+Rust 不在乎你的程式碼放在哪，但我會建議你建立一個 *projects* 的目錄在 home 目錄底下，並且把所有你的專案都放在裡面。
+開啟終端機並輸入以下指令來替專案建立目錄：
 
 ```bash
 $ mkdir ~/projects
@@ -28,17 +23,16 @@ $ mkdir hello_world
 $ cd hello_world
 ```
 
-> Note: If you’re on Windows and not using PowerShell, the `~` may not work.
-> Consult the documentation for your shell for more details.
+> 註：如果你使用 Windows 而且不是使用 PowerShell，則 `~` 應該沒有作用。
+> 參考適合你的文件去設定你的 shell。
 
-## Writing and Running a Rust Program
+## 撰寫並執行 Rust 程式
 
-Next, make a new source file and call it *main.rs*. Rust files always end
-in a *.rs* extension. If you’re using more than one word in your filename, use
-an underscore to separate them; for example, you'd use *hello_world.rs* rather
-than *helloworld.rs*.
+接著，建立一個原始碼檔案 *main.rs*。
+Rust 的檔案永遠以 *.rs* 作為結尾。
+如果你的檔案名稱有超過一個單字，使用底線去區分它們；例如，你應該使用 *hello_world.rs* 命名，而不是 *helloworld.rs*。
 
-Now open the *main.rs* file you just created, and type the following code:
+現在開啟建立好的 *main.rs* 檔案，然後輸入以下程式碼：
 
 ```rust
 fn main() {
@@ -46,8 +40,8 @@ fn main() {
 }
 ```
 
-Save the file, and go back to your terminal window. On Linux or OSX, enter the
-following commands:
+存檔，然後回到你的終端機視窗。
+在 Linux 或 OSX 下，輸入以下指令：
 
 ```bash
 $ rustc main.rs
@@ -55,15 +49,15 @@ $ ./main
 Hello, world!
 ```
 
-In Windows, just replace `main` with `main.exe`. Regardless of your operating
-system, you should see the string `Hello, world!` print to the terminal. If you
-did, then congratulations! You've officially written a Rust program. That makes
-you a Rust programmer! Welcome.
+在 Windows 下，只需要把 `main` 換成 `main.exe`。
+不論你的作業系統為何，你應該能看到字串 `Hello, world!` 印在你的終端機上。
+如果你成功了，那麼恭喜你！
+你正式地寫出了 Rust 程式。這讓你成為了 Rust 程式設計師！歡迎你！
 
-## Anatomy of a Rust Program
+## 剖析 Rust 程式
 
-Now, let’s go over what just happened in your "Hello, world!" program in
-detail. Here's the first piece of the puzzle:
+現在，讓我們細細檢視你的 "Hello, world!" 程式倒底發生了什麼。
+這是第一個謎團：
 
 ```rust
 fn main() {
@@ -71,143 +65,120 @@ fn main() {
 }
 ```
 
-These lines define a *function* in Rust. The `main` function is special: it's
-the beginning of every Rust program. The first line says, “I’m declaring a
-function named `main` that takes no arguments and returns nothing.” If there
-were arguments, they would go inside the parentheses (`(` and `)`), and because
-we aren’t returning anything from this function, we can omit the return type
-entirely.
+這幾行定義了 Rust 中的 *函式* (function)。
+而 `main` 函式比較特殊：他是所有 Rust 城市的開始之處。
+第一行意指：『我要宣告一個名叫 `main` 的函式，他沒有參數也不回傳任何東西。』
+如果函式有參數，它會放在括號中間（`(` and `)`），而因為我們沒有回傳任何東西，所以我們可以忽略回傳的型態。
 
-Also note that the function body is wrapped in curly braces (`{` and `}`). Rust
-requires these around all function bodies. It's considered good style to put
-the opening curly brace on the same line as the function declaration, with one
-space in between.
+另外，注意函式的內容被大括號（`{` and `}`）給包起來。
+Rust 要求大括號要在所有函式的內容外面。
+考量到好的程式樣式，我們會把一個大括號放在函式宣告的同一行，中間隔一個空白。
 
-Inside the `main()` function:
+在 `main()` 函式中：
 
 ```rust
     println!("Hello, world!");
 ```
 
-This line does all of the work in this little program: it prints text to the
-screen. There are a number of details that are important here. The first is
-that it’s indented with four spaces, not tabs.
+這一行做了這個小程式的所有工作：印出文字到螢幕上。
+這邊有許多很重要的細節。
+第一個是縮排是四個空白，而不是 tabs。
 
-The second important part is the `println!()` line. This is calling a Rust
-*[macro]*, which is how metaprogramming is done in Rust. If it were calling a
-function instead, it would look like this: `println()` (without the !). We'll
-discuss Rust macros in more detail later, but for now you just need to
-know that when you see a `!` that means that you’re calling a macro instead of
-a normal function.
+第二個重要的部分是 `println!()` 這行。
+這個在 Rust 叫做 *[巨集][macro]* (macro)，這是 Rust 達成 metaprogramming 的方式。
+如果此處改用函式的話，會看起來像是 `println()`（沒有 ! 符號）。
+我們將會在之後討論 Rust 巨集的更多細節，但是現在你只需要知道，當你看到 `!` 的時候，代表你正在呼叫一個巨集而不是一般的函式。
 
 [macro]: macros.html
 
-Next is `"Hello, world!"` which is a *string*. We pass this string as an
-argument to `println!`, which prints the string to the screen. Easy enough!
+接著 `"Hello, world!"` 是一個 *字串* (string)。
+我們傳遞這個字串作為參數給 `println!`，然後它將字串印在螢幕上。
+夠簡單吧！
 
-The line ends with a semicolon (`;`). Rust is an *expression oriented*
-language, which means that most things are expressions, rather than statements.
-The `;` indicates that this expression is over, and the next one is ready to
-begin. Most lines of Rust code end with a `;`.
+程式中每一行都以分號（`;`）結尾。
+Rust 是個 *表達式導向* (expression oriented) 的語言，這代表著大多數的東西都是表達式，而不是陳述式 (statements)。
+`;` 代表著這個表達式已經結束，而且下一個正準備開始。
+Rust 程式碼的大多數行都是以 `;` 結尾。
 
-## Compiling and Running Are Separate Steps
+## 編譯和執行是分開的步驟
 
-In "Writing and Running a Rust Program", we showed you how to run a newly
-created program. We'll break that process down and examine each step now.
+在 "撰寫並執行 Rust 程式" 中，我們告訴你如何執行一個新建的程式。
+現在讓我們分解流程，檢查每一步。
 
-Before running a Rust program, you have to compile it. You can use the Rust
-compiler by entering the `rustc` command and passing it the name of your source
-file, like this:
+執行 Rust 程式之前，你需要編譯它。
+你可以使用 Rust 編譯器，輸入 `rustc` 指令並傳遞原始碼的檔名給它，像這樣：
 
 ```bash
 $ rustc main.rs
 ```
 
-If you come from a C or C++ background, you'll notice that this is similar to
-`gcc` or `clang`. After compiling successfully, Rust should output a binary
-executable, which you can see on Linux or OSX by entering the `ls` command in
-your shell as follows:
+如果你有 C 或 C++ 的背景，你會注意到這跟 `gcc` 或 `clang` 很類似。
+編譯成功之後，Rust 應該會輸出一個執行檔，你可以在 Linux 或 OSX 下輸入 `ls` 指令：
 
 ```bash
 $ ls
 main  main.rs
 ```
 
-On Windows, you'd enter:
+在 Windows 下，你可以輸入：
 
 ```bash
 $ dir
 main.exe  main.rs
 ```
 
-This shows we have two files: the source code, with an `.rs` extension, and the
-executable (`main.exe` on Windows, `main` everywhere else). All that's left to
-do from here is run the `main` or `main.exe` file, like this:
+這告訴我們有兩個檔案在這：以 `.rs` 作為副檔名的原始檔，以及執行檔（在 Windows 是 `main.exe`，其他則是 `main`）。
+接著我們唯一要做的就只剩下執行 `main` 或 `main.exe` 了：
 
 ```bash
 $ ./main  # or main.exe on Windows
 ```
 
-If *main.rs* were your "Hello, world!" program, this would print `Hello,
-world!` to your terminal.
+如果 *main.rs* 就是你的 "Hello, world!" 程式，那他將會印出 `Hello, world!` 在你的終端機上。
 
-If you come from a dynamic language like Ruby, Python, or JavaScript, you may
-not be used to compiling and running a program being separate steps. Rust is an
-*ahead-of-time compiled* language, which means that you can compile a program,
-give it to someone else, and they can run it even without Rust installed. If
-you give someone a `.rb` or `.py` or `.js` file, on the other hand, they need
-to have a Ruby, Python, or JavaScript implementation installed (respectively),
-but you only need one command to both compile and run your program. Everything
-is a tradeoff in language design.
+如果你以前是學動態語言，像 Ruby、Python、或 JavaScript，你可能會不習慣編譯和執行程式是分開的步驟。
+Rust 是個 *提前編譯* 的語言，這代表你可以編譯程式，然後把程式給其他人，他們可以在沒有安裝 Rust 的情況下執行程式。
+如果你給一個人 `.rb` 或 `.py` 或 `.js` 檔，換句話說，他也必須要有安裝好的 Ruby、Python、或 JavaScript 應用（個別地），但只需要一個指令去編譯並執行你的程式。
+在程式語言的設計中，所有事情都是取捨。
 
-Just compiling with `rustc` is fine for simple programs, but as your project
-grows, you'll want to be able to manage all of the options your project has,
-and make it easy to share your code with other people and projects. Next, I'll
-introduce you to a tool called Cargo, which will help you write real-world Rust
-programs.
+簡單的程式只需要用 `rustc` 直接編譯就好了，但是如果你的專案成長了，你會希望能夠管理專案的所有選項，並且能簡單的分享你的程式碼給其他人和專案。
+下一節，我們將會介紹給你一個叫做 Cargo 的工具，他可以幫你撰寫真實世界的 Rust 程式。
 
 # Hello, Cargo!
 
-Cargo is Rust’s build system and package manager, and Rustaceans use Cargo to
-manage their Rust projects. Cargo manages three things: building your code,
-downloading the libraries your code depends on, and building those libraries.
-We call libraries your code needs ‘dependencies’ since your code depends on
-them.
+Cargo 是 Rust 的建置系統跟套件管理器，而且 Rustaceans 會使用 Cargo 去管理他們的 Rust 專案。
+Cargo 管理三件事：建置你的程式碼、下載你的程式碼所依賴的函式庫 (libraries)、以及建置這些函式庫。
+我們把這些你的程式所依賴的函式庫叫做 "依賴關係" (dependencies)，因為你的程式碼依賴他們。
 
-The simplest Rust programs don’t have any dependencies, so right now, you'd
-only use the first part of its functionality. As you write more complex Rust
-programs, you’ll want to add dependencies, and if you start off using Cargo,
-that will be a lot easier to do.
+最簡單的 Rust 城市不會有任何依賴關係，所以現在你只會用到第一部份的功能。
+當你撰寫更複雜的 Rust 程式後，你將會希望加入依賴關係，而且如果你從 Cargo 開始的話，那會簡單很多。
 
-As the vast, vast majority of Rust projects use Cargo, we will assume that
-you’re using it for the rest of the book. Cargo comes installed with Rust
-itself, if you used the official installers. If you installed Rust through some
-other means, you can check if you have Cargo installed by typing:
+許多主要的 Rust 專案都使用 Cargo，我們假設在本書後面的章節你都會使用它。
+如果你使用官方的安裝檔，Cargo 將會隨著 Rust 一起裝好。
+如果你用其他方法安裝 Rust，你可以輸入以下指令檢查是否已經裝好 Cargo：
 
 ```bash
 $ cargo --version
 ```
 
-Into a terminal. If you see a version number, great! If you see an error like
-‘`command not found`’, then you should look at the documentation for the system
-in which you installed Rust, to determine if Cargo is separate.
+在終端機內，如果你能看到版本號碼，那就太好了！
+如果你看到錯誤訊息像 `command not found`，則你應該要查閱你安裝 Rust 時的文件，確定 Cargo 是否需要另外安裝。
 
-## Converting to Cargo
+## 轉換到 Cargo
 
-Let’s convert the Hello World program to Cargo. To Cargo-fy a project, you need
-to do three things:
+讓我們開始轉換 Hello World 程式到 Cargo。
+要 Cargo 化專案的話，你需要做以下三件事：
 
-1. Put your source file in the right directory.
-2. Get rid of the old executable (`main.exe` on Windows, `main` everywhere else)
-   and make a new one.
-3. Make a Cargo configuration file.
+1. 把你的原始碼檔案放到正確的目錄。
+2. 去除舊的執行檔（在 Windows 是 `main.exe`，其他則是 `main`），
+   並且建立一個新的。
+3. 建立 Cargo 組態 (configuration) 檔。
 
-Let's get started!
+讓我們開始吧！
 
-### Creating a new Executable and Source Directory
+### 建立新的執行檔和原始碼目錄
 
-First, go back to your terminal, move to your *hello_world* directory, and
-enter the following commands:
+首先，回到你的終端機，移動你的 *hello_world* 目錄，輸入以下指令：
 
 ```bash
 $ mkdir src
@@ -215,36 +186,29 @@ $ mv main.rs src/main.rs
 $ rm main  # or 'del main.exe' on Windows
 ```
 
-Cargo expects your source files to live inside a *src* directory, so do that
-first. This leaves the top-level project directory (in this case,
-*hello_world*) for READMEs, license information, and anything else not related
-to your code. In this way, using Cargo helps you keep your projects nice and
-tidy. There's a place for everything, and everything is in its place.
+Cargo 預期你的原始碼會放在 *src* 目錄內，所以我們先做這個。
+最上層的專案目錄（在此為 *hello_world*）保留來放置 README 檔、授權資訊、及其他跟你的程式碼無關的東西。
+這樣可以讓你保持專案的整潔。
+物有所屬，所有東西都有自己的家。
 
-Now, copy *main.rs* to the *src* directory, and delete the compiled file you
-created with `rustc`. As usual, replace `main` with `main.exe` if you're on
-Windows.
+然後，複製 *main.rs* 到 *src* 目錄，然後刪除 `rustc` 編譯出的檔案。通常來說， `main` 在 Windows 下會被 `main.exe` 取代。
 
-This example retains `main.rs` as the source filename because it's creating an
-executable. If you wanted to make a library instead, you'd name the file
-`lib.rs`. This convention is used by Cargo to successfully compile your
-projects, but it can be overridden if you wish.
+這個例子把 `main.rs` 作為原始碼檔案保留下來，因為它可以簡歷執行檔。
+如果你想要建立一個函式庫 (library)，你應該把檔案命名為 `lib.rs`。
+Cargo 使用這樣的慣例去編譯你的專案，但是如果你想要的話，你還是可以更改它。
 
-### Creating a Configuration File
+### 建立組態檔
 
-Next, create a new file inside your *hello_world* directory, and call it
-`Cargo.toml`.
+接著，在 *hello_world* 目錄下建立一個新的檔案，命名為 `Cargo.toml`。
 
-Make sure to capitalize the `C` in `Cargo.toml`, or Cargo won't know what to do
-with the configuration file.
+確保 `Cargo.toml` 的 `C` 是大寫，否則 Cargo 會無法處理這樣的組態檔。
 
-This file is in the *[TOML]* (Tom's Obvious, Minimal Language) format. TOML is
-similar to INI, but has some extra goodies, and is used as Cargo’s
-configuration format.
+這個檔案使用 *[TOML]* (Tom's Obvious, Minimal Language) 格式。
+TOML 跟 INI 很類似，但是有些額外的好東西，而且被用來作為 Cargo 的組態格式。
 
 [TOML]: https://github.com/toml-lang/toml
 
-Inside this file, type the following information:
+在檔案內，輸入以下資訊：
 
 ```toml
 [package]
@@ -254,21 +218,17 @@ version = "0.1.0"
 authors = [ "Your name <you@example.com>" ]
 ```
 
-The first line, `[package]`, indicates that the following statements are
-configuring a package. As we add more information to this file, we’ll add other
-sections, but for now, we just have the package configuration.
+第一行，`[package]` 指出以下的陳述是用來配置一個套件 (package)。
+當我們要加入更多資訊到這個檔案內，我們會增加其他的小節 (sections)，但是現在，我們只有套件組態的設定。
 
-The other three lines set the three bits of configuration that Cargo needs to
-know to compile your program: its name, what version it is, and who wrote it.
+其他三行設定了三項 Cargo 編譯程式所需要知道的組態：程式的名字、它的版本、和誰是作者。
 
-Once you've added this information to the *Cargo.toml* file, save it to finish
-creating the configuration file.
+當你加入了這些資訊到 *Cargo.toml* 檔案內後，存檔然後結束。
 
-## Building and Running a Cargo Project
+## 建立並執行 Cargo 專案
 
-With your *Cargo.toml* file in place in your project's root directory, you
-should be ready to build and run your Hello World program! To do so, enter the
-following commands:
+當你的 *Cargo.toml* 檔案被放在專案的根目錄後，你應該準備好要建立並執行你的 Hello World 程式了！
+輸入以下指令：
 
 ```bash
 $ cargo build
@@ -277,11 +237,9 @@ $ ./target/debug/hello_world
 Hello, world!
 ```
 
-Bam! If all goes well, `Hello, world!` should print to the terminal once more.
+蹦！如果一切順利，`Hello, world!` 應該再次印在終端機上了。
 
-You just built a project with `cargo build` and ran it with
-`./target/debug/hello_world`, but you can actually do both in one step with
-`cargo run` as follows:
+你可以透過 `cargo build` 建置專案、且透過 `./target/debug/hello_world` 執行它，但你其實可以直接以 `cargo run` 一步執行兩者：
 
 ```bash
 $ cargo run
@@ -289,10 +247,9 @@ $ cargo run
 Hello, world!
 ```
 
-Notice that this example didn’t re-build the project. Cargo figured out that
-the file hasn’t changed, and so it just ran the binary. If you'd modified your
-source code, Cargo would have rebuilt the project before running it, and you
-would have seen something like this:
+請注意，這個範例沒有重新建置專案。
+Cargo 判斷檔案沒有更動，所以他直接執行執行擋。
+如果你有修改你的原始碼，Cargo 會在執行前重新建置專案，然後你會看到：
 
 ```bash
 $ cargo run
@@ -301,24 +258,19 @@ $ cargo run
 Hello, world!
 ```
 
-Cargo checks to see if any of your project’s files have been modified, and only
-rebuilds your project if they’ve changed since the last time you built it.
+Cargo 會檢查是否專案內的檔案有被更改，而且只會在專案有更動的時候重新建置。
 
-With simple projects, Cargo doesn't bring a whole lot over just using `rustc`,
-but it will become useful in the future. With complex projects composed of multiple
-crates, it’s much easier to let Cargo coordinate the build. With Cargo, you can
-just run `cargo build`, and it should work the right way.
+在簡單的專案中，Cargo 無法比 `rustc` 帶來更多好處，但是它在未來會越來越有用。
+在用到許多 crates 的複雜專案中，使用 Cargo 去協調建置會比較簡單。
+你只需要執行 `cargo build`，然後一切都會正確的運行。
 
-## Building for Release
+## 建立發行版
 
-When your project is finally ready for release, you can use `cargo build
---release` to compile your project with optimizations. These optimizations make
-your Rust code run faster, but turning them on makes your program take longer
-to compile. This is why there are two different profiles, one for development,
-and one for building the final program you’ll give to a user.
+當你的專案最終準備好要發行，你應該使用 `cargo build --release` 來最佳化編譯你的專案。
+這些最佳化讓你的 Rust 程式碼執行得更快，但是會讓你的程式編譯起來多花點時間。
+這也是為什麼會有兩種不同的 profiles，一個用於開發，一個用於建置最終給使用者的程式。
 
-Running this command also causes Cargo to create a new file called
-*Cargo.lock*, which looks like this:
+執行這個指令同時會讓 Cargo 建立一個新的檔案叫做 *Cargo.lock*，檔案看起來像這樣：
 
 ```toml
 [root]
@@ -326,17 +278,15 @@ name = "hello_world"
 version = "0.1.0"
 ```
 
-Cargo uses the *Cargo.lock* file to keep track of dependencies in your
-application. This is the Hello World project's *Cargo.lock* file. This project
-doesn't have dependencies, so the file is a bit sparse. Realistically, you
-won't ever need to touch this file yourself; just let Cargo handle it.
+Cargo 使用 *Cargo.lock* 去追蹤你的應用程式的依賴關係。
+這是 Hello World 專案的 *Cargo.lock* 檔。
+這個專案沒有任何依賴關係，所以檔案有點稀疏。
+實際上，你不需要自己去碰這個檔案；只要讓 Cargo 去處理就好了。
 
-That’s it! If you've been following along, you should have successfully built
-`hello_world` with Cargo.
+就這樣！如果你一路照著做到現在，你應該已經成功的以 Cargo 建置 `hello_world` 了。
 
-Even though the project is simple, it now uses much of the real tooling you’ll
-use for the rest of your Rust career. In fact, you can expect to start
-virtually all Rust projects with some variation on the following commands:
+即使這個專案很簡單，它也使用了許多之後你的 Rust 生涯中會真實用上的工具。
+事實上，你可以預期，幾乎所有的 Rust 專案都會透過類似以下的指令開始：
 
 ```bash
 $ git clone someurl.com/foo
@@ -344,28 +294,26 @@ $ cd foo
 $ cargo build
 ```
 
-## Making A New Cargo Project the Easy Way
+## 簡單的開始一個新 Cargo 專案
 
-You don’t have to go through that previous process every time you want to start
-a new project! Cargo can quickly make a bare-bones project directory that you
-can start developing in right away.
+當你想要開始一個新專案的時候，你不需要每次都重新執行一遍前面的流程！
+Cargo 可以快速的建立專案目錄的骨架，然後你就可以開始開發。
 
-To start a new project with Cargo, enter `cargo new` at the command line:
+用 Cargo 開始一個新專案，只要輸入 `cargo new`：
 
 ```bash
 $ cargo new hello_world --bin
 ```
 
-This command passes `--bin` because the goal is to get straight to making an
-executable application, as opposed to a library. Executables are often called
-*binaries* (as in `/usr/bin`, if you’re on a Unix system).
+這個指令傳遞了 `--bin` 因為他的目的是直接建議一個可執行的應用程式，而不是函式庫 (library)。
+執行擋也常被稱作 *binaries*。
 
-Cargo has generated two files and one directory for us: a `Cargo.toml` and a
-*src* directory with a *main.rs* file inside. These should look familliar,
-they’re exactly what we created by hand, above.
+Cargo 產生兩個檔案和一個目錄給我們：`Cargo.toml` 和內含 *main.rs* 的 *src* 目錄。
+他們看起來與我們前面手動建立的很像。
 
-This output is all you need to get started. First, open `Cargo.toml`. It should
-look something like this:
+這些就是我們全部所需要開始的東西。
+首先，打開 `Cargo.toml`。
+它應該看起來像這樣：
 
 ```toml
 [package]
@@ -375,11 +323,10 @@ version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
 ```
 
-Cargo has populated *Cargo.toml* with reasonable defaults based on the arguments
-you gave it and your `git` global configuration. You may notice that Cargo has
-also initialized the `hello_world` directory as a `git` repository.
+Cargo 會根據你給它的參數和你的 `git` 環境組態產生有合理預設值的 `Cargo.toml`。
+而且你能注意到 Cargo 同時也把 `hello_world` 目錄初始化成 `git` 的 repository。
 
-Here’s what should be in `src/main.rs`:
+至於 `src/main.rs` 內應該會像這樣：
 
 ```rust
 fn main() {
@@ -387,9 +334,8 @@ fn main() {
 }
 ```
 
-Cargo has generated a "Hello World!" for you, and you’re ready to start coding!
+Cargo 會幫你產生 "Hello World!"，你就可以準備開始寫程式了！
 
-> Note: If you want to look at Cargo in more detail, check out the official [Cargo
-guide], which covers all of its features.
+> 註：如果你想要閱覽更多 Cargo 的細節，可以查閱官方的[Cargo 指南][Cargo guide]，其中包含有所有的功能。
 
 [Cargo guide]: http://doc.crates.io/guide.html
